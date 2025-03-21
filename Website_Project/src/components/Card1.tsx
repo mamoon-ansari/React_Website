@@ -1,33 +1,48 @@
 import * as React from "react";
+import Box from "@mui/material/Box";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
 
-const bull = <span className="inline-block mx-0.5 transform scale-80">•</span>;
+const bull = (
+  <Box
+    component="span"
+    sx={{ display: "inline-block", mx: "2px", transform: "scale(0.8)" }}
+  >
+    •
+  </Box>
+);
 
 const card = (
   <React.Fragment>
-    <div className="p-4">
-      <p className="text-sm text-gray-500">Word of the Day</p>
-      <h2 className="text-2xl font-bold">
-        A{bull}B{bull}C{bull}D
-      </h2>
-      <p className="text-sm text-gray-500 mb-3">adjective</p>
-      <p className="text-sm">
+    <CardContent>
+      <Typography gutterBottom sx={{ color: "text.secondary", fontSize: 14 }}>
+        Word of the Day
+      </Typography>
+      <Typography variant="h5" component="div">
+        be{bull}nev{bull}o{bull}lent
+      </Typography>
+      <Typography sx={{ color: "text.secondary", mb: 1.5 }}>
+        adjective
+      </Typography>
+      <Typography variant="body2">
         well meaning and kindly.
         <br />
         {'"a benevolent smile"'}
-      </p>
-    </div>
-    <div className="p-2">
-      <button className="text-sm text-black-500 bg-gray-300! hover:text-blue-700">
-        Learn More
-      </button>
-    </div>
+      </Typography>
+    </CardContent>
+    <CardActions>
+      <Button size="small">Learn More</Button>
+    </CardActions>
   </React.Fragment>
 );
 
 export default function Card1() {
   return (
-    <div className="min-w-[275px]">
-      <div className="border border-gray-300 rounded-lg">{card}</div>
-    </div>
+    <Box sx={{ minWidth: 275 }}>
+      <Card variant="outlined">{card}</Card>
+    </Box>
   );
 }

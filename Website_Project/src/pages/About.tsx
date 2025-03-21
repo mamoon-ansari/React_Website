@@ -1,11 +1,24 @@
-import React from 'react';
+import React from "react";
+import { Box, Typography } from "@mui/material";
 
 const About: React.FC = () => {
   return (
-    <div className="flex flex-col items-center justify-center h-176 bg-gray-100 p-8">
-      <h1 className="text-4xl text-black font-bold mb-4">About Us</h1>
-      <p className="text-lg text-gray-700">Learn more about our mission and vision.</p>
-    </div>
+    <Box
+      sx={{
+        flexGrow: 1,
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <Typography variant="h4" align="center" gutterBottom>
+        About Us
+      </Typography>
+      <Typography variant="body1" align="center">
+        Learn more about our mission and vision.
+      </Typography>
+    </Box>
   );
 };
 
