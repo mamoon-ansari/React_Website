@@ -16,9 +16,14 @@ interface InfoCardProps {
 export default function InfoCard({ title, image, items, link, shade }: InfoCardProps) {
   return (
     <Box sx={{ maxWidth: 360, boxShadow: 3 }}>
-      <Card sx={{ height: 500, display: "flex", flexDirection: "column" }}>
+      <Card sx={{ height: 600, display: "flex", flexDirection: "column" }}>
         {/* Top Image */}
-        <CardMedia component="img" height="180" image={image} alt={title} />
+        <CardMedia
+          component="img"
+          image={image}
+          alt={title}
+          sx={{ width: '100%', height: 180, objectFit: 'cover', flexShrink: 0 }}
+        />
 
         {/* Orange Section */}
         <CardContent

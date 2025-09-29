@@ -28,25 +28,35 @@ const ServicesCards: React.FC = () => {
               "Storm Water Networks",
               "Sewerage Networks",
               "Drainage Network",
-              "Fire Hydrant / Fire Fighting Networks",
-              "GRE, GRPE, HDPE, UPVC Pipe Works",
+              "Fire Hydrant / Fire Fighting Networks Gre, Grpe, Hdpe, Upvc Pipe Works",
+              "Pipe Jacking Works",
+              "Service Line Coring & Ditching Works",
+              "Pipe Line Patching & Lamination Works",
+              // "Pipe Line Plugging & Rectification Works",
+              // "Street Lighting Works",
+              // "Construction Of Manholes, Chambers, Gullys & Soakway",
             ]}
             link="#"
           />
         </Item>
       </Grid>
 
-      {/* Building Works */}
+      {/* Civil Works */}
       <Grid item xs={12} sm={6} md={3}>
         <Item>
           <InfoCard
-            title="Building Works"
-            image="/assets/buildingwork.jpg"
+            title="Civil Works"
+            image="/assets/civilwork.jpg"
             items={[
-              "Residential Buildings",
-              "Commercial Buildings",
-              "Industrial Projects",
-              "Renovations & Interiors",
+              "Earth Works",
+              "Guard Rail Installation Works",
+              "Fencing & Barbed Wire Works",
+              "Pavement Works",
+              "Carpentry and Flooring Works",
+              "False Ceiling & Light Partition Installation",
+              "Floor & Wall Tiling Works",
+              "Plastering Works",
+              "Boundary Wall & Other Structural Works",
             ]}
             link="#"
             shade="#1976d2"
@@ -58,13 +68,13 @@ const ServicesCards: React.FC = () => {
       <Grid item xs={12} sm={6} md={3}>
         <Item>
           <InfoCard
-            title="Road & Highway Works"
+            title="Road Works"
             image="/assets/roadwork.jpg"
             items={[
-              "Asphalt Paving",
-              "Concrete Roads",
-              "Bridges & Flyovers",
-              "Footpaths & Cycle Tracks",
+              "Asphalt Reinstatement and Maintenance",
+              "Road Marking Works",
+              "Road Kerb Works",
+              "Road & Traffic Sign Installation",
             ]}
             link="#"
             shade="#1976d2"
@@ -76,13 +86,13 @@ const ServicesCards: React.FC = () => {
       <Grid item xs={12} sm={6} md={3}>
         <Item>
           <InfoCard
-            title="Electrical Works"
+            title="Electromechanical Works"
             image="/assets/electromechanicalwork.jpg"
             items={[
-              "Street Lighting",
-              "Power Distribution",
-              "Substations",
-              "Low Voltage Systems",
+              "Electro Mechanical Equipment Installation & Maintenance",
+              "Air Conditioning Ventilation & Air Filtration System Installation & Maintenance Maintenance Service",
+              "Plumbing & Sanitary Maintenance Works",
+              "Swimming Pool Maintenance Work",
             ]}
             link="#"
           />

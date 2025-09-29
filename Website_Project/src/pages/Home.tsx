@@ -4,6 +4,7 @@ import Typography from "@mui/material/Typography";
 import ServicesCards from "../components/ServicesCards"; 
 import SpecializedContractor from "../components/SpecializedContractor";
 import CompanyFooter from "../components/CompanyFooter";
+import ProjectsGallery  from "../components/ProjectsGallery";
 
 
 const Home: React.FC = () => {
@@ -46,10 +47,17 @@ const Home: React.FC = () => {
       <Box sx={{ width: '100%', mb: 6 }}>
         <ServicesCards />
       </Box>
+
       {/* Middle Section - Specialized Contractor */}
       <Box sx={{ width: '100%', mb: 6 }}>
         <SpecializedContractor />
       </Box>
+
+      {/* Projects Gallery Section */}
+      <Box sx={{ width: '100%', mb: 6 }}>
+        <ProjectsGallery />
+      </Box>
+
       {/* Lower Section - Company Footer */}
       <Box sx={{ width: '100%', mb: 0 }}>
         <CompanyFooter />
