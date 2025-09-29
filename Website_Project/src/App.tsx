@@ -4,9 +4,20 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Contact from "./pages/Contact";
+import ContactUs from "./pages/ContactUs";
 import Footer from "./components/Footer";
 import theme from "./theme";
+
+// About Sub-pages
+import CompanyProfile from "./pages/about/CompanyProfile";
+import DirectorsMessage from "./pages/about/DirectorsMessage";
+import OrganizationChart from "./pages/about/OrganizationChart";
+
+// Services Sub-pages
+import InfrastructureWorks from "./pages/services/InfrastructureWorks";
+import RoadWorks from "./pages/services/RoadWorks";
+import CivilWorks from "./pages/services/CivilWorks";
+import ElectromechanicalWorks from "./pages/services/ElectromechanicalWorks";
 
 const App: React.FC = () => {
   return (
@@ -23,13 +34,26 @@ const App: React.FC = () => {
             width: "100%", // Ensure full width
             display: "flex",
             flexDirection: "column",
-            justifyContent: "center", // Center content vertically
           }}
         >
           <Routes>
+            {/* Home Route */}
             <Route path="/" element={<Home />} />
+            
+            {/* About Routes */}
             <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
+            <Route path="/about/company-profile" element={<CompanyProfile />} />
+            <Route path="/about/directors-message" element={<DirectorsMessage />} />
+            <Route path="/about/organization-chart" element={<OrganizationChart />} />
+            
+            {/* Services Routes */}
+            <Route path="/services/infrastructure" element={<InfrastructureWorks />} />
+            <Route path="/services/road-works" element={<RoadWorks />} />
+            <Route path="/services/civil-works" element={<CivilWorks />} />
+            <Route path="/services/electromechanical" element={<ElectromechanicalWorks />} />
+            
+            {/* Contact Route */}
+            <Route path="/contact" element={<ContactUs />} />
           </Routes>
         </Container>
         <Footer />
