@@ -1,11 +1,10 @@
 import React from "react";
 import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
+import HomeHeader from "../components/HomeHeader";
 import ServicesCards from "../components/ServicesCards"; 
 import SpecializedContractor from "../components/SpecializedContractor";
 import CompanyFooter from "../components/CompanyFooter";
-import ProjectsGallery  from "../components/ProjectsGallery";
-
+import ProjectsGallery from "../components/ProjectsGallery";
 
 const Home: React.FC = () => {
   return (
@@ -13,53 +12,43 @@ const Home: React.FC = () => {
       sx={{
         display: "flex",
         flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        minHeight: "700px",
-        bgcolor: "grey.300",
-        p: 4,
+        minHeight: "100vh",
+        background: "linear-gradient(135deg, #1a252f 0%, #2c3e50 100%)",
       }}
     >
-      <Typography
-        variant="h3"
+      {/* Header Section with Services Cards */}
+      <Box
         sx={{
-          fontWeight: "bold",
-          mb: 2,
-          color: "text.primary",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          py: 8,
+          px: 4,
         }}
       >
-        Welcome to Rashid Shams Technical Services LLC
-      </Typography>
+        <Box sx={{ width: '100%', mb: 6 }}>
+          <HomeHeader />
+        </Box>
 
-      <Typography
-        variant="body1"
-        sx={{
-          color: "text.secondary",
-          mb: 4,
-        }}
-      >
-        Specialized in Infrastructure Works, Road Maintenance Works,
-        Underground Utility Works, Pavement Works, Civil Works and
-        Electromechanical Works
-      </Typography>
-
-      {/* ✅ Add all the cards here */}
-      <Box sx={{ width: '100%', mb: 6 }}>
-        <ServicesCards />
+        {/* Services Cards */}
+        <Box sx={{ width: '100%' }}>
+          <ServicesCards />
+        </Box>
       </Box>
 
-      {/* Middle Section - Specialized Contractor */}
-      <Box sx={{ width: '100%', mb: 6 }}>
+      {/* Specialized Contractor Section */}
+      <Box sx={{ width: '100%' }}>
         <SpecializedContractor />
       </Box>
 
       {/* Projects Gallery Section */}
-      <Box sx={{ width: '100%', mb: 6 }}>
+      <Box sx={{ width: '100%' }}>
         <ProjectsGallery />
       </Box>
 
-      {/* Lower Section - Company Footer */}
-      <Box sx={{ width: '100%', mb: 0 }}>
+      {/* Company Footer Section */}
+      <Box sx={{ width: '100%' }}>
         <CompanyFooter />
       </Box>
     </Box>

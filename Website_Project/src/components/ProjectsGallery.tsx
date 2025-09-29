@@ -101,7 +101,8 @@ const ProjectsGallery: React.FC = () => {
   return (
     <Box
       sx={{
-        bgcolor: "white",
+        background: "linear-gradient(135deg, #1a252f 0%, #2c3e50 100%)",
+        color: "white",
         py: 8,
         px: 4,
         position: "relative",
@@ -116,9 +117,10 @@ const ProjectsGallery: React.FC = () => {
             sx={{
               fontWeight: "bold",
               mb: 3,
-              color: "#1a3a8f",
+              color: "#3498db",
               fontSize: { xs: "2.5rem", md: "3rem" },
               textTransform: "uppercase",
+              letterSpacing: "1px",
             }}
           >
             Projects Gallery
@@ -127,7 +129,7 @@ const ProjectsGallery: React.FC = () => {
           <Typography
             variant="h6"
             sx={{
-              color: "#2c3e50",
+              color: "#ecf0f1",
               maxWidth: "800px",
               mx: "auto",
               lineHeight: 1.6,
@@ -156,14 +158,17 @@ const ProjectsGallery: React.FC = () => {
                 left: -20,
                 top: "50%",
                 transform: "translateY(-50%)",
-                bgcolor: "white",
-                boxShadow: "0 2px 8px rgba(0,0,0,0.3)",
+                bgcolor: "#3498db",
+                color: "white",
+                boxShadow: "0 4px 12px rgba(52, 152, 219, 0.4)",
                 zIndex: 10,
                 '&:hover': {
-                  bgcolor: "grey.100",
+                  bgcolor: "#2980b9",
+                  transform: "translateY(-50%) scale(1.1)",
                 },
                 width: 48,
                 height: 48,
+                transition: "all 0.3s ease-in-out",
               }}
             >
               <ChevronLeftIcon />
@@ -181,14 +186,17 @@ const ProjectsGallery: React.FC = () => {
                 right: -20,
                 top: "50%",
                 transform: "translateY(-50%)",
-                bgcolor: "white",
-                boxShadow: "0 2px 8px rgba(0,0,0,0.3)",
+                bgcolor: "#3498db",
+                color: "white",
+                boxShadow: "0 4px 12px rgba(52, 152, 219, 0.4)",
                 zIndex: 10,
                 '&:hover': {
-                  bgcolor: "grey.100",
+                  bgcolor: "#2980b9",
+                  transform: "translateY(-50%) scale(1.1)",
                 },
                 width: 48,
                 height: 48,
+                transition: "all 0.3s ease-in-out",
               }}
             >
               <ChevronRightIcon />
@@ -215,15 +223,15 @@ const ProjectsGallery: React.FC = () => {
                   height: 8,
                 },
                 "&::-webkit-scrollbar-track": {
-                  background: "#f1f1f1",
+                  background: "rgba(255, 255, 255, 0.1)",
                   borderRadius: 4,
                 },
                 "&::-webkit-scrollbar-thumb": {
-                  background: "#c1c1c1",
+                  background: "rgba(52, 152, 219, 0.6)",
                   borderRadius: 4,
                 },
                 "&::-webkit-scrollbar-thumb:hover": {
-                  background: "#a8a8a8",
+                  background: "rgba(52, 152, 219, 0.8)",
                 },
               },
             }}
@@ -234,13 +242,16 @@ const ProjectsGallery: React.FC = () => {
                 sx={{
                   flex: "0 0 auto",
                   width: { xs: "280px", sm: "320px", md: "350px" },
-                  borderRadius: "12px",
+                  borderRadius: "16px",
                   overflow: "hidden",
-                  boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
-                  transition: "transform 0.3s ease, box-shadow 0.3s ease",
+                  background: "linear-gradient(135deg, #2c3e50 0%, #34495e 100%)",
+                  boxShadow: "0 8px 32px rgba(0,0,0,0.2)",
+                  border: "1px solid rgba(255, 255, 255, 0.1)",
+                  transition: "all 0.3s ease-in-out",
                   "&:hover": {
-                    transform: "translateY(-8px)",
-                    boxShadow: "0 8px 24px rgba(0,0,0,0.25)",
+                    transform: "translateY(-12px)",
+                    boxShadow: "0 20px 40px rgba(0,0,0,0.3)",
+                    border: "1px solid rgba(52, 152, 219, 0.3)",
                   },
                 }}
               >
@@ -261,11 +272,12 @@ const ProjectsGallery: React.FC = () => {
                       left: 0,
                       right: 0,
                       bottom: 0,
-                      backgroundColor: "rgba(0,0,0,0.2)",
-                      transition: "backgroundColor 0.3s ease",
+                      background: "linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.4) 100%)",
+                      transition: "opacity 0.3s ease",
+                      opacity: 0,
                     },
                     "&:hover::before": {
-                      backgroundColor: "rgba(0,0,0,0.1)",
+                      opacity: 1,
                     },
                   }}
                 />
@@ -273,17 +285,20 @@ const ProjectsGallery: React.FC = () => {
                 {/* Project Title */}
                 <Box
                   sx={{
-                    p: 2,
-                    bgcolor: "white",
+                    p: 3,
                     textAlign: "center",
+                    background: "rgba(52, 152, 219, 0.1)",
+                    borderTop: "1px solid rgba(255, 255, 255, 0.1)",
                   }}
                 >
                   <Typography
                     variant="body1"
                     sx={{
                       fontWeight: "bold",
-                      color: "#2c3e50",
-                      fontSize: "1rem",
+                      color: "#ecf0f1",
+                      fontSize: "1.1rem",
+                      textTransform: "uppercase",
+                      letterSpacing: "0.5px",
                     }}
                   >
                     {project.title}
@@ -296,25 +311,29 @@ const ProjectsGallery: React.FC = () => {
 
         {/* View More Button */}
         <Box sx={{ textAlign: "center", mt: 6 }}>
-          <Typography
-            variant="body1"
+          <Box
+            component="button"
             sx={{
-              display: "inline-block",
-              bgcolor: "#1a3a8f",
+              background: "linear-gradient(45deg, #3498db 0%, #2980b9 100%)",
               color: "white",
-              px: 4,
-              py: 2,
-              borderRadius: "4px",
+              border: "none",
+              padding: "12px 32px",
+              borderRadius: "25px",
               fontWeight: "bold",
+              fontSize: "1rem",
               cursor: "pointer",
-              transition: "background-color 0.3s ease",
-              '&:hover': {
-                bgcolor: "#2a4ba0",
+              transition: "all 0.3s ease-in-out",
+              boxShadow: "0 4px 15px rgba(52, 152, 219, 0.3)",
+              textTransform: "uppercase",
+              letterSpacing: "0.5px",
+              "&:hover": {
+                transform: "translateY(-2px)",
+                boxShadow: "0 6px 20px rgba(52, 152, 219, 0.4)",
               },
             }}
           >
             View More Projects
-          </Typography>
+          </Box>
         </Box>
       </Box>
     </Box>
