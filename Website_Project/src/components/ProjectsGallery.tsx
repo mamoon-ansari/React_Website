@@ -7,21 +7,21 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
 // Placeholder images - replace with your actual project images
 const projectImages = [
-  { id: 1, title: "Road Infrastructure Project", image: "/images/project1.jpg" },
-  { id: 2, title: "Civil Works Project", image: "/images/project2.jpg" },
-  { id: 3, title: "Utility Works", image: "/images/project3.jpg" },
-  { id: 4, title: "Pavement Works", image: "/images/project4.jpg" },
-  { id: 5, title: "Electromechanical Project", image: "/images/project5.jpg" },
-  { id: 6, title: "Infrastructure Development", image: "/images/project6.jpg" },
-  { id: 7, title: "Road Maintenance", image: "/images/project7.jpg" },
-  { id: 8, title: "Construction Project", image: "/images/project8.jpg" },
+  { id: 1, title: "Road Infrastructure Project", image: "/assets/roadinfrawork.jpg" },
+  { id: 2, title: "Civil Works Project", image: "/assets/civilwork.jpg" },
+  { id: 3, title: "Utility Works", image: "/assets/utilitywork.jpg" },
+  { id: 4, title: "Pavement Works", image: "/assets/pavementwork.jpg" },
+  { id: 5, title: "Electromechanical Project", image: "/assets/electromechanicalwork.jpg" },
+  { id: 6, title: "Infrastructure Development", image: "/assets/infrawork2.jpg" },
+  { id: 7, title: "Road Maintenance", image: "/assets/roadwork.jpg" },
+  { id: 8, title: "Construction Project", image: "/assets/constructionwork.jpg" },
 ];
 
 const ProjectsGallery: React.FC = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [showLeftButton, setShowLeftButton] = useState(false);
   const [showRightButton, setShowRightButton] = useState(true);
-  const autoScrollRef = useRef<NodeJS.Timeout | null>(null);
+  const autoScrollRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const scroll = (direction: 'left' | 'right') => {
     if (scrollContainerRef.current) {
@@ -134,7 +134,7 @@ const ProjectsGallery: React.FC = () => {
               fontSize: { xs: "1rem", md: "1.2rem" },
             }}
           >
-            FOUR WALLS TECHNICAL SERVICES CONTRACTING LLC has extensive knowledge of Infrastructure & Road Maintenance Works and the successful delivery of countless complex and specialized projects in UAE.
+            RASHID SHAMS TECHNICAL SERVICES LLC has extensive knowledge of Infrastructure & Road Maintenance Works and the successful delivery of complex and specialized projects in UAE.
           </Typography>
         </Box>
 
