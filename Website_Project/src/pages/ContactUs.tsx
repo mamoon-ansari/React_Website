@@ -7,7 +7,10 @@ import {
   CardContent, 
   TextField, 
   Button,
-  Container 
+  Container,
+  Snackbar,
+  Alert,
+  CircularProgress
 } from "@mui/material";
 import { 
   FaPhone, 
@@ -17,14 +20,30 @@ import {
   FaClock,
   FaPaperPlane
 } from "react-icons/fa";
+import { supabaseAdmin } from "../../lib/supabase";
+
+interface FormData {
+  name: string;
+  email: string;
+  phone: string;
+  subject: string;
+  message: string;
+}
 
 const ContactUs: React.FC = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
     phone: "",
     subject: "",
     message: ""
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [snackbar, setSnackbar] = useState({
+    open: false,
+    message: "",
+    severity: "success" as "success" | "error"
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -34,18 +53,84 @@ const ContactUs: React.FC = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log("Form submitted:", formData);
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      subject: "",
-      message: ""
-    });
+    setLoading(true);
+
+    try {
+      // Insert into Supabase database
+      const { error } = await supabaseAdmin
+        .from('contact_submissions')
+        .insert([
+          {
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+            subject: formData.subject,
+            message: formData.message,
+            submitted_at: new Date().toISOString(),
+            status: 'new'
+          }
+        ])
+        .select();
+
+      if (error) {
+        throw error;
+      }
+
+      // Send email notification (you can use Supabase Edge Functions for this)
+      // await sendEmailNotification(formData);
+
+      // Show success message
+      setSnackbar({
+        open: true,
+        message: "Thank you for your message! We'll get back to you soon.",
+        severity: "success"
+      });
+
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        subject: "",
+        message: ""
+      });
+
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSnackbar({
+        open: true,
+        message: "Sorry, there was an error sending your message. Please try again.",
+        severity: "error"
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // const sendEmailNotification = async (formData: FormData) => {
+  //   // Method 1: Using Supabase Edge Functions (Recommended)
+  //   try {
+  //     const response = await fetch('/api/send-email', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify(formData),
+  //     });
+
+  //     if (!response.ok) {
+  //       throw new Error('Failed to send email');
+  //     }
+  //   } catch (error) {
+  //     console.error('Error sending email:', error);
+  //     // Don't throw error here - we still want to save the form data
+  //   }
+  // };
+
+  const handleCloseSnackbar = () => {
+    setSnackbar({ ...snackbar, open: false });
   };
 
   return (
@@ -54,7 +139,7 @@ const ContactUs: React.FC = () => {
         background: "linear-gradient(135deg, #1a252f 0%, #2c3e50 100%)",
         color: "white",
         minHeight: "100vh",
-        pt: 12, // Padding for fixed header
+        pt: 12,
         pb: 8,
       }}
     >
@@ -114,6 +199,7 @@ const ContactUs: React.FC = () => {
                   Get In Touch
                 </Typography>
 
+                {/* Contact info items remain the same */}
                 {/* Phone */}
                 <Box sx={{ display: "flex", alignItems: "center", mb: 3 }}>
                   <Box
@@ -282,6 +368,7 @@ const ContactUs: React.FC = () => {
                         value={formData.name}
                         onChange={handleChange}
                         required
+                        disabled={loading}
                         sx={{
                           "& .MuiInputLabel-root": { color: "#bdc3c7" },
                           "& .MuiOutlinedInput-root": {
@@ -302,6 +389,7 @@ const ContactUs: React.FC = () => {
                         value={formData.email}
                         onChange={handleChange}
                         required
+                        disabled={loading}
                         sx={{
                           "& .MuiInputLabel-root": { color: "#bdc3c7" },
                           "& .MuiOutlinedInput-root": {
@@ -320,6 +408,7 @@ const ContactUs: React.FC = () => {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
+                        disabled={loading}
                         sx={{
                           "& .MuiInputLabel-root": { color: "#bdc3c7" },
                           "& .MuiOutlinedInput-root": {
@@ -339,6 +428,7 @@ const ContactUs: React.FC = () => {
                         value={formData.subject}
                         onChange={handleChange}
                         required
+                        disabled={loading}
                         sx={{
                           "& .MuiInputLabel-root": { color: "#bdc3c7" },
                           "& .MuiOutlinedInput-root": {
@@ -353,13 +443,14 @@ const ContactUs: React.FC = () => {
                     <Grid item xs={12}>
                       <TextField
                         fullWidth
-                        label="Your Message / Requirnment"
+                        label="Your Message / Requirement"
                         name="message"
                         multiline
                         rows={4}
                         value={formData.message}
                         onChange={handleChange}
                         required
+                        disabled={loading}
                         sx={{
                           "& .MuiInputLabel-root": { color: "#bdc3c7" },
                           "& .MuiOutlinedInput-root": {
@@ -375,8 +466,11 @@ const ContactUs: React.FC = () => {
                       <Button
                         type="submit"
                         fullWidth
+                        disabled={loading}
                         sx={{
-                          background: "linear-gradient(45deg, #3498db 0%, #2980b9 100%)",
+                          background: loading 
+                            ? "rgba(52, 152, 219, 0.5)" 
+                            : "linear-gradient(45deg, #3498db 0%, #2980b9 100%)",
                           color: "white",
                           padding: "12px 32px",
                           borderRadius: "25px",
@@ -387,13 +481,15 @@ const ContactUs: React.FC = () => {
                           boxShadow: "0 4px 15px rgba(52, 152, 219, 0.3)",
                           transition: "all 0.3s ease-in-out",
                           "&:hover": {
-                            transform: "translateY(-2px)",
-                            boxShadow: "0 6px 20px rgba(52, 152, 219, 0.4)",
+                            transform: loading ? "none" : "translateY(-2px)",
+                            boxShadow: loading 
+                              ? "0 4px 15px rgba(52, 152, 219, 0.3)" 
+                              : "0 6px 20px rgba(52, 152, 219, 0.4)",
                           },
                         }}
-                        startIcon={<FaPaperPlane />}
+                        startIcon={loading ? <CircularProgress size={20} color="inherit" /> : <FaPaperPlane />}
                       >
-                        Send Message
+                        {loading ? "Sending..." : "Send Message"}
                       </Button>
                     </Grid>
                   </Grid>
@@ -457,6 +553,22 @@ const ContactUs: React.FC = () => {
             Call Now
           </Button>
         </Box>
+
+        {/* Snackbar for notifications */}
+        <Snackbar
+          open={snackbar.open}
+          autoHideDuration={6000}
+          onClose={handleCloseSnackbar}
+          anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+        >
+          <Alert 
+            onClose={handleCloseSnackbar} 
+            severity={snackbar.severity}
+            sx={{ width: '100%' }}
+          >
+            {snackbar.message}
+          </Alert>
+        </Snackbar>
       </Container>
     </Box>
   );
