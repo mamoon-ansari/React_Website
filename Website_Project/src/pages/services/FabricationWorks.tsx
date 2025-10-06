@@ -15,7 +15,6 @@ import {
   FaIndustry, 
   FaBuilding, 
   FaHome,
-  FaCog,
   FaCheckCircle,
   FaPhone,
   FaEnvelope,

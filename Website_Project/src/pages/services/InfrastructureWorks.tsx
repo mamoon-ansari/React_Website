@@ -13,7 +13,6 @@ import {
 } from "@mui/material";
 import { 
   FaWater, 
-  FaRoad, 
   FaTools, 
   FaLightbulb,
   FaCheckCircle,
@@ -22,7 +21,6 @@ import {
   FaShieldAlt,
   FaCogs,
   FaBuilding,
-  FaCog
 } from "react-icons/fa";
 
 const InfrastructureWorks: React.FC = () => {

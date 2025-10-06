@@ -74,7 +74,7 @@ const ServiceItem = styled(Typography)(({ theme }) => ({
 }));
 
 // Styled React Router Link for Read More
-const ReadMoreLink = styled(Link)(({ theme }) => ({
+const ReadMoreLink = styled(Link)(() => ({
   display: "inline-flex",
   alignItems: "center",
   color: "white",
