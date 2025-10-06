@@ -310,7 +310,7 @@ const ProjectsGallery: React.FC = () => {
         </Box>
 
         {/* View More Button */}
-        <Box sx={{ textAlign: "center", mt: 6 }}>
+        {/* <Box sx={{ textAlign: "center", mt: 6 }}>
           <Box
             component="button"
             sx={{
@@ -334,7 +334,7 @@ const ProjectsGallery: React.FC = () => {
           >
             View More Projects
           </Box>
-        </Box>
+        </Box> */}
       </Box>
     </Box>
   );

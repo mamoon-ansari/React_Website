@@ -12,105 +12,71 @@ import {
   ListItemIcon
 } from "@mui/material";
 import { 
-  FaBuilding, 
-  FaHardHat, 
-  FaTools,
+  FaHome, 
+  FaTruck, 
+  FaShieldAlt,
   FaCheckCircle,
   FaPhone,
   FaEnvelope,
-  FaShieldAlt,
-  FaCogs,
-  FaHome,
-  FaIndustry
+  FaClock,
+  FaCogs
 } from "react-icons/fa";
 
-const CivilWorks: React.FC = () => {
-  const services = [
-    {
-      icon: <FaBuilding size={30} />,
-      title: "STRUCTURAL WORKS",
-      items: [
-        "Concrete structure construction",
-        "Steel structure erection",
-        "Foundation works",
-        "Retaining walls construction",
-        "Pre-cast concrete elements",
-        "Structural steel fabrication"
-      ]
-    },
-    {
-      icon: <FaHardHat size={30} />,
-      title: "EARTH WORKS",
-      items: [
-        "Excavation and backfilling",
-        "Site grading and leveling",
-        "Soil stabilization",
-        "Land development",
-        "Cut and fill operations",
-        "Earth moving and compaction"
-      ]
-    },
-    {
-      icon: <FaHome size={30} />,
-      title: "BUILDING CONSTRUCTION",
-      items: [
-        "Residential building construction",
-        "Commercial building construction",
-        "Industrial facilities",
-        "Institutional buildings",
-        "Mixed-use developments",
-        "High-rise constructions"
-      ]
-    },
-    {
-      icon: <FaIndustry size={30} />,
-      title: "INFRASTRUCTURE DEVELOPMENT",
-      items: [
-        "Site development works",
-        "Utility infrastructure",
-        "Landscape development",
-        "Parking facilities",
-        "External works",
-        "Site utilities"
-      ]
-    }
-  ];
-
+const PrebuiltCabins: React.FC = () => {
   const features = [
     {
-      title: "Quality Assurance",
-      description: "Strict quality control and adherence to international standards"
+      icon: <FaHome size={30} />,
+      title: "READY-TO-USE & QUICK INSTALLATION",
+      items: [
+        "Fully or partially built off-site",
+        "Installs on-site within hours or days",
+        "Minimal foundation required"
+      ]
     },
     {
-      title: "Modern Equipment",
-      description: "State-of-the-art machinery and construction equipment"
+      icon: <FaTruck size={30} />,
+      title: "PORTABLE & RELOCATABLE",
+      items: [
+        "Designed for easy shifting using crane",
+        "Ideal for temporary or shifting work sites",
+        "Quick deployment and relocation"
+      ]
     },
     {
-      title: "Expert Team",
-      description: "Experienced engineers and skilled workforce"
-    },
-    {
-      title: "Timely Completion",
-      description: "Efficient project management for on-time delivery"
+      icon: <FaShieldAlt size={30} />,
+      title: "DURABLE & STRONG CONSTRUCTION",
+      items: [
+        "MS Frame with rust-proof treatment",
+        "Weather-resistant external cladding",
+        "Designed for wind, rain and moderate seismic loads"
+      ]
     }
   ];
 
-  const projectTypes = [
+  const applications = [
     {
-      title: "Residential Projects",
-      description: "Villas, apartments, and residential complexes"
+      title: "Site Offices",
+      description: "Temporary office spaces for construction sites and projects"
     },
     {
-      title: "Commercial Buildings",
-      description: "Office towers, malls, and commercial centers"
+      title: "Security Cabins",
+      description: "Durable security checkpoints and guard houses"
     },
     {
-      title: "Industrial Facilities",
-      description: "Factories, warehouses, and industrial plants"
+      title: "Storage Units",
+      description: "Secure storage solutions for tools and equipment"
     },
     {
-      title: "Institutional Projects",
-      description: "Schools, hospitals, and government buildings"
+      title: "Mobile Toilets",
+      description: "Hygienic sanitation facilities for work sites"
+    },
+    {
+      title: "Emergency Shelters",
+      description: "Quick deployment shelters for emergency situations"
+    },
+    {
+      title: "Retail Kiosks",
+      description: "Portable retail spaces and information booths"
     }
   ];
 
@@ -138,7 +104,7 @@ const CivilWorks: React.FC = () => {
               letterSpacing: "1px",
             }}
           >
-            CIVIL WORKS
+            PREBUILT CABINS
           </Typography>
           <Box
             sx={{
@@ -159,27 +125,14 @@ const CivilWorks: React.FC = () => {
               fontSize: { xs: "1.5rem", md: "2rem" },
             }}
           >
-            COMPREHENSIVE CIVIL ENGINEERING SOLUTIONS
-          </Typography>
-          <Typography
-            variant="h6"
-            sx={{
-              color: "#ecf0f1",
-              maxWidth: "800px",
-              mx: "auto",
-              lineHeight: 1.6,
-              fontSize: { xs: "1rem", md: "1.2rem" },
-            }}
-          >
-            Professional civil engineering services including structural works, building construction, 
-            and infrastructure development for residential, commercial, and industrial projects across UAE.
+            OUR COMPLETE RANGE OF PREBUILT CABINS WORKS INCLUDE
           </Typography>
         </Box>
 
-        {/* Services Section */}
+        {/* Features Section */}
         <Grid container spacing={4} sx={{ mb: 8 }}>
-          {services.map((service, index) => (
-            <Grid item xs={12} md={6} key={index}>
+          {features.map((feature, index) => (
+            <Grid item xs={12} md={4} key={index}>
               <Card
                 sx={{
                   background: "linear-gradient(135deg, #2c3e50 0%, #34495e 100%)",
@@ -209,22 +162,22 @@ const CivilWorks: React.FC = () => {
                         mr: 2,
                       }}
                     >
-                      {service.icon}
+                      {feature.icon}
                     </Box>
                     <Typography
                       variant="h5"
                       sx={{
                         fontWeight: "bold",
                         color: "#3498db",
-                        fontSize: "1.3rem",
+                        fontSize: "1.2rem",
                       }}
                     >
-                      {service.title}
+                      {feature.title}
                     </Typography>
                   </Box>
                   
                   <List dense>
-                    {service.items.map((item, itemIndex) => (
+                    {feature.items.map((item, itemIndex) => (
                       <ListItem key={itemIndex} sx={{ px: 0, py: 1 }}>
                         <ListItemIcon sx={{ minWidth: "35px" }}>
                           <FaCheckCircle size={16} color="#3498db" />
@@ -245,7 +198,7 @@ const CivilWorks: React.FC = () => {
           ))}
         </Grid>
 
-        {/* Features Section */}
+        {/* Applications Section */}
         <Box sx={{ mb: 8 }}>
           <Typography
             variant="h3"
@@ -257,11 +210,11 @@ const CivilWorks: React.FC = () => {
               fontSize: { xs: "2rem", md: "2.5rem" },
             }}
           >
-            Why Choose Our Civil Works Services?
+            Applications & Uses
           </Typography>
           <Grid container spacing={3}>
-            {features.map((feature, index) => (
-              <Grid item xs={12} sm={6} md={3} key={index}>
+            {applications.map((app, index) => (
+              <Grid item xs={12} sm={6} md={4} key={index}>
                 <Card
                   sx={{
                     background: "rgba(52, 152, 219, 0.1)",
@@ -285,63 +238,10 @@ const CivilWorks: React.FC = () => {
                         color: "#3498db",
                       }}
                     >
-                      {feature.title}
+                      {app.title}
                     </Typography>
                     <Typography variant="body2" color="#ecf0f1">
-                      {feature.description}
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
-
-        {/* Project Types Section */}
-        <Box sx={{ mb: 8 }}>
-          <Typography
-            variant="h3"
-            sx={{
-              fontWeight: "bold",
-              mb: 4,
-              color: "#3498db",
-              textAlign: "center",
-              fontSize: { xs: "2rem", md: "2.5rem" },
-            }}
-          >
-            Project Types We Handle
-          </Typography>
-          <Grid container spacing={3}>
-            {projectTypes.map((project, index) => (
-              <Grid item xs={12} sm={6} md={3} key={index}>
-                <Card
-                  sx={{
-                    background: "linear-gradient(135deg, #3498db 0%, #2980b9 100%)",
-                    color: "white",
-                    borderRadius: "12px",
-                    boxShadow: "0 8px 32px rgba(52, 152, 219, 0.3)",
-                    border: "1px solid rgba(255, 255, 255, 0.2)",
-                    height: "100%",
-                    textAlign: "center",
-                    transition: "all 0.3s ease-in-out",
-                    "&:hover": {
-                      transform: "translateY(-5px)",
-                      boxShadow: "0 12px 40px rgba(52, 152, 219, 0.5)",
-                    },
-                  }}
-                >
-                  <CardContent sx={{ p: 3 }}>
-                    <Typography
-                      variant="h6"
-                      sx={{
-                        fontWeight: "bold",
-                        mb: 2,
-                      }}
-                    >
-                      {project.title}
-                    </Typography>
-                    <Typography variant="body2" sx={{ color: "rgba(255, 255, 255, 0.9)" }}>
-                      {project.description}
+                      {app.description}
                     </Typography>
                   </CardContent>
                 </Card>
@@ -362,17 +262,17 @@ const CivilWorks: React.FC = () => {
               fontSize: { xs: "1.5rem", md: "2rem" },
             }}
           >
-            Our Key Strengths
+            Key Benefits
           </Typography>
           <Grid container spacing={3}>
             <Grid item xs={12} md={4}>
               <Box sx={{ textAlign: "center", p: 3 }}>
-                <FaShieldAlt size={40} color="#3498db" style={{ marginBottom: "16px" }} />
+                <FaClock size={40} color="#3498db" style={{ marginBottom: "16px" }} />
                 <Typography variant="h6" sx={{ color: "#3498db", mb: 2 }}>
-                  Safety First
+                  Time Saving
                 </Typography>
                 <Typography variant="body1" color="#ecf0f1">
-                  Strict adherence to safety protocols and international standards on all sites.
+                  Reduce construction time by up to 70% with our prebuilt solutions.
                 </Typography>
               </Box>
             </Grid>
@@ -380,21 +280,21 @@ const CivilWorks: React.FC = () => {
               <Box sx={{ textAlign: "center", p: 3 }}>
                 <FaCogs size={40} color="#3498db" style={{ marginBottom: "16px" }} />
                 <Typography variant="h6" sx={{ color: "#3498db", mb: 2 }}>
-                  Advanced Technology
+                  Cost Effective
                 </Typography>
                 <Typography variant="body1" color="#ecf0f1">
-                  Modern construction techniques and equipment for superior results.
+                  Lower labor costs and minimal material waste compared to traditional construction.
                 </Typography>
               </Box>
             </Grid>
             <Grid item xs={12} md={4}>
               <Box sx={{ textAlign: "center", p: 3 }}>
-                <FaTools size={40} color="#3498db" style={{ marginBottom: "16px" }} />
+                <FaShieldAlt size={40} color="#3498db" style={{ marginBottom: "16px" }} />
                 <Typography variant="h6" sx={{ color: "#3498db", mb: 2 }}>
-                  Quality Workmanship
+                  Quality Assured
                 </Typography>
                 <Typography variant="body1" color="#ecf0f1">
-                  Skilled workforce ensuring high-quality construction and finishing.
+                  Factory-controlled environment ensures consistent quality and workmanship.
                 </Typography>
               </Box>
             </Grid>
@@ -420,7 +320,7 @@ const CivilWorks: React.FC = () => {
               fontSize: { xs: "2rem", md: "2.5rem" },
             }}
           >
-            Professional Civil Works Services
+            Get Your Prebuilt Cabin Solution
           </Typography>
           <Typography
             variant="h6"
@@ -432,7 +332,7 @@ const CivilWorks: React.FC = () => {
               lineHeight: 1.6,
             }}
           >
-            Get comprehensive civil engineering solutions for your construction projects in Dubai and across UAE.
+            Contact us for quick, efficient, and durable prebuilt cabin solutions in Dubai and across UAE.
           </Typography>
           
           <Box sx={{ display: "flex", justifyContent: "center", gap: 3, flexWrap: "wrap" }}>
@@ -488,4 +388,4 @@ const CivilWorks: React.FC = () => {
   );
 };
 
-export default CivilWorks;
+export default PrebuiltCabins;

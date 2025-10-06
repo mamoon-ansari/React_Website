@@ -1,6 +1,7 @@
 import React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
+import { Link } from 'react-router-dom';
 
 const SpecializedContractor: React.FC = () => {
   return (
@@ -159,7 +160,8 @@ const SpecializedContractor: React.FC = () => {
         {/* CTA Button */}
         <Box sx={{ mt: 4 }}>
           <Box
-            component="button"
+            component={Link}
+            to="/contact"
             sx={{
               background: "linear-gradient(45deg, #3498db 0%, #2980b9 100%)",
               color: "white",

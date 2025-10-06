@@ -53,83 +53,83 @@ const ServicesCards: React.FC = () => {
       </HeaderSection>
 
       <StyledGridContainer container spacing={4}>
-        {/* Infrastructure Works */}
-        <Grid item xs={12} sm={6} md={3}>
-          <InfoCard
-            title="Infrastructure Works"
-            image="/assets/infrawork.jpg"
-            items={[
-              "Water Networks",
-              "Irrigation Networks",
-              "Storm Water Networks",
-              "Sewerage Networks",
-              "Drainage Network",
-              "Fire Hydrant / Fire Fighting Networks",
-              "Pipe Jacking Works",
-              "Service Line Coring & Ditching Works",
-              "Pipe Line Patching & Lamination Works",
-            ]}
-            link="#"
-            color="#3498db"
-          />
-        </Grid>
+  {/* Infrastructure Works */}
+  <Grid item xs={12} sm={6} md={3}>
+    <InfoCard
+      title="Infrastructure Works"
+      image="/assets/infrawork.jpg"
+      items={[
+        "Water Networks",
+        "Irrigation Networks",
+        "Storm Water Networks",
+        "Sewerage Networks",
+        "Drainage Network",
+        "Fire Hydrant / Fire Fighting Networks",
+        "Pipe Jacking Works",
+        "Service Line Coring & Ditching Works",
+        "Pipe Line Patching & Lamination Works",
+      ]}
+      link="/services/infrastructure" // Updated to proper route
+      color="#3498db"
+    />
+  </Grid>
 
-        {/* Civil Works */}
-        <Grid item xs={12} sm={6} md={3}>
-          <InfoCard
-            title="Civil Works"
-            image="/assets/civilwork.jpg"
-            items={[
-              "Earth Works",
-              "Guard Rail Installation Works",
-              "Fencing & Barbed Wire Works",
-              "Pavement Works",
-              "Carpentry and Flooring Works",
-              "False Ceiling & Light Partition Installation",
-              "Floor & Wall Tiling Works",
-              "Plastering Works",
-              "Boundary Wall & Other Structural Works",
-            ]}
-            link="#"
-            color="#2c3e50"
-          />
-        </Grid>
+  {/* Civil Works */}
+  <Grid item xs={12} sm={6} md={3}>
+    <InfoCard
+      title="Civil Works"
+      image="/assets/civilwork.jpg"
+      items={[
+        "Earth Works",
+        "Guard Rail Installation Works",
+        "Fencing & Barbed Wire Works",
+        "Pavement Works",
+        "Carpentry and Flooring Works",
+        "False Ceiling & Light Partition Installation",
+        "Floor & Wall Tiling Works",
+        "Plastering Works",
+        "Boundary Wall & Other Structural Works",
+      ]}
+      link="/services/civil-works" // Updated to proper route
+      color="#2c3e50"
+    />
+  </Grid>
 
-        {/* Road & Highway Works */}
-        <Grid item xs={12} sm={6} md={3}>
-          <InfoCard
-            title="Road Works"
-            image="/assets/roadwork.jpg"
-            items={[
-              "Asphalt Reinstatement and Maintenance",
-              "Road Marking Works",
-              "Road Kerb Works",
-              "Road & Traffic Sign Installation",
-            ]}
-            link="#"
-            color="#2980b9"
-          />
-        </Grid>
+  {/* Road Works */}
+  <Grid item xs={12} sm={6} md={3}>
+    <InfoCard
+      title="Road Works"
+      image="/assets/roadwork.jpg"
+      items={[
+        "Asphalt Reinstatement and Maintenance",
+        "Road Marking Works",
+        "Road Kerb Works",
+        "Road & Traffic Sign Installation",
+      ]}
+      link="/services/road-works" // Updated to proper route
+      color="#2980b9"
+    />
+  </Grid>
 
-        {/* Electrical Works */}
-        <Grid item xs={12} sm={6} md={3}>
-          <InfoCard
-            title="Electromechanical Works"
-            image="/assets/electromechanicalwork.jpg"
-            items={[
-              "Electro Mechanical Equipment Installation & Maintenance",
-              "Air Conditioning Ventilation & Air Filtration System Installation & Maintenance",
-              "Plumbing & Sanitary Maintenance Works",
-              "Swimming Pool Maintenance Work",
-            ]}
-            link="#"
-            color="#1abc9c"
-          />
-        </Grid>
-      </StyledGridContainer>
+  {/* Electromechanical Works */}
+  <Grid item xs={12} sm={6} md={3}>
+    <InfoCard
+      title="Electromechanical Works"
+      image="/assets/electromechanicalwork.jpg"
+      items={[
+        "Electro Mechanical Equipment Installation & Maintenance",
+        "Air Conditioning Ventilation & Air Filtration System Installation & Maintenance",
+        "Plumbing & Sanitary Maintenance Works",
+        "Swimming Pool Maintenance Work",
+      ]}
+      link="/services/electromechanical" // Updated to proper route
+      color="#1abc9c"
+    />
+  </Grid>
+</StyledGridContainer>
 
       {/* CTA Section */}
-      <Box sx={{ textAlign: "center", mt: 6 }}>
+      {/* <Box sx={{ textAlign: "center", mt: 6 }}>
         <Box
           component="button"
           sx={{
@@ -153,7 +153,7 @@ const ServicesCards: React.FC = () => {
         >
           View All Services
         </Box>
-      </Box>
+      </Box> */}
     </Box>
   );
 };

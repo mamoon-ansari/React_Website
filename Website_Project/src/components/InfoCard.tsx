@@ -4,8 +4,8 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import Link from "@mui/material/Link";
 import { styled } from "@mui/material/styles";
+import { Link } from "react-router-dom"; // Import React Router Link
 
 interface InfoCardProps {
   title: string;
@@ -16,7 +16,7 @@ interface InfoCardProps {
 }
 
 const StyledCard = styled(Card)(() => ({
-  height: "500px",
+  height: "600px",
   display: "flex",
   flexDirection: "column",
   borderRadius: "16px",
@@ -70,6 +70,26 @@ const ServiceItem = styled(Typography)(({ theme }) => ({
   },
   "&:last-child": {
     borderBottom: "none",
+  },
+}));
+
+// Styled React Router Link for Read More
+const ReadMoreLink = styled(Link)(({ theme }) => ({
+  display: "inline-flex",
+  alignItems: "center",
+  color: "white",
+  fontWeight: "bold",
+  fontSize: "0.9rem",
+  padding: "8px 16px",
+  backgroundColor: "rgba(255, 255, 255, 0.2)",
+  borderRadius: "20px",
+  transition: "all 0.3s ease-in-out",
+  textDecoration: "none",
+  "&:hover": {
+    backgroundColor: "rgba(255, 255, 255, 0.3)",
+    transform: "translateX(4px)",
+    textDecoration: "none",
+    color: "white",
   },
 }));
 
@@ -198,24 +218,9 @@ export default function InfoCard({ title, image, items, link, color = "#1a3a8f" 
 
           {/* Read More Link */}
           <Box sx={{ textAlign: "center", mt: 2, minHeight: "40px" }}>
-            <Link
-              href={link}
-              underline="none"
-              sx={{
-                display: "inline-flex",
-                alignItems: "center",
-                color: "white",
-                fontWeight: "bold",
-                fontSize: "0.9rem",
-                padding: "8px 16px",
-                backgroundColor: "rgba(255, 255, 255, 0.2)",
-                borderRadius: "20px",
-                transition: "all 0.3s ease-in-out",
-                "&:hover": {
-                  backgroundColor: "rgba(255, 255, 255, 0.3)",
-                  transform: "translateX(4px)",
-                },
-              }}
+            <ReadMoreLink
+              to={link} // Use React Router's 'to' prop instead of 'href'
+              onClick={() => window.scrollTo(0, 0)} // Optional: scroll to top on click
             >
               Read More 
               <Box 
@@ -228,7 +233,7 @@ export default function InfoCard({ title, image, items, link, color = "#1a3a8f" 
               >
                 →
               </Box>
-            </Link>
+            </ReadMoreLink>
           </Box>
         </CardContent>
       </StyledCard>

@@ -230,6 +230,27 @@ const Header: React.FC = () => {
               >
                 Electromechanical Works
               </MenuItem>
+              <MenuItem 
+                component={Link} 
+                to="/services/fabrication-works" 
+                onClick={handleServicesMenuClose}
+              >
+                Fabrication Works
+              </MenuItem>
+              <MenuItem 
+                component={Link} 
+                to="/services/prebuilt-cabins" 
+                onClick={handleServicesMenuClose}
+              >
+                Prebuilt Cabins
+              </MenuItem>
+              <MenuItem 
+                component={Link} 
+                to="/services/hvac-services" 
+                onClick={handleServicesMenuClose}
+              >
+                HVAC Services
+              </MenuItem>
             </Menu>
           </Box>
 
@@ -255,7 +276,7 @@ const Header: React.FC = () => {
 
           <Button
             component={Link}
-            to="/quote"
+            to="/contact"
             sx={{
               background: "linear-gradient(45deg, #3498db 0%, #2980b9 100%)",
               color: "white",

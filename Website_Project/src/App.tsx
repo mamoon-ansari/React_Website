@@ -7,6 +7,7 @@ import About from "./pages/About";
 import ContactUs from "./pages/ContactUs";
 import Footer from "./components/Footer";
 import theme from "./theme";
+import ScrollToTop from "./ScrollToTop";
 
 // About Sub-pages
 import CompanyProfile from "./pages/about/CompanyProfile";
@@ -18,6 +19,9 @@ import InfrastructureWorks from "./pages/services/InfrastructureWorks";
 import RoadWorks from "./pages/services/RoadWorks";
 import CivilWorks from "./pages/services/CivilWorks";
 import ElectromechanicalWorks from "./pages/services/ElectromechanicalWorks";
+import FabricationWorks from "./pages/services/FabricationWorks";
+import PreBuiltCabins from "./pages/services/PreBuiltCabins";
+import HVAC from "./pages/services/HVAC";
 
 const App: React.FC = () => {
   return (
@@ -36,6 +40,7 @@ const App: React.FC = () => {
             flexDirection: "column",
           }}
         >
+          <ScrollToTop />
           <Routes>
             {/* Home Route */}
             <Route path="/" element={<Home />} />
@@ -51,6 +56,9 @@ const App: React.FC = () => {
             <Route path="/services/road-works" element={<RoadWorks />} />
             <Route path="/services/civil-works" element={<CivilWorks />} />
             <Route path="/services/electromechanical" element={<ElectromechanicalWorks />} />
+            <Route path="/services/fabrication-works" element={<FabricationWorks />} />
+            <Route path="/services/prebuilt-cabins" element={<PreBuiltCabins />} />
+            <Route path="/services/hvac-services" element={<HVAC />} />
             
             {/* Contact Route */}
             <Route path="/contact" element={<ContactUs />} />

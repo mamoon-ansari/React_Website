@@ -12,105 +12,106 @@ import {
   ListItemIcon
 } from "@mui/material";
 import { 
+  FaIndustry, 
   FaBuilding, 
-  FaHardHat, 
-  FaTools,
+  FaHome,
+  FaCog,
   FaCheckCircle,
   FaPhone,
   FaEnvelope,
   FaShieldAlt,
+  FaTools,
   FaCogs,
-  FaHome,
-  FaIndustry
+  FaHammer
 } from "react-icons/fa";
 
-const CivilWorks: React.FC = () => {
+const FabricationWorks: React.FC = () => {
   const services = [
     {
       icon: <FaBuilding size={30} />,
-      title: "STRUCTURAL WORKS",
+      title: "CONSTRUCTION FABRICATION",
       items: [
-        "Concrete structure construction",
-        "Steel structure erection",
-        "Foundation works",
-        "Retaining walls construction",
-        "Pre-cast concrete elements",
-        "Structural steel fabrication"
-      ]
-    },
-    {
-      icon: <FaHardHat size={30} />,
-      title: "EARTH WORKS",
-      items: [
-        "Excavation and backfilling",
-        "Site grading and leveling",
-        "Soil stabilization",
-        "Land development",
-        "Cut and fill operations",
-        "Earth moving and compaction"
+        "Steel Structures (Beams, Columns, Trusses)",
+        "MS Railings, Staircases, Grills",
+        "Roofing Frameworks & Support Systems",
+        "Gates, Doors, Window Frames",
+        "Canopies & Pergolas",
+        "Structural Steel Fabrication"
       ]
     },
     {
       icon: <FaHome size={30} />,
-      title: "BUILDING CONSTRUCTION",
+      title: "ARCHITECTURAL & INTERIOR",
       items: [
-        "Residential building construction",
-        "Commercial building construction",
-        "Industrial facilities",
-        "Institutional buildings",
-        "Mixed-use developments",
-        "High-rise constructions"
+        "SS Handrails & Balustrades",
+        "Decorative Metal Panels & Screens",
+        "Metal Frames for Furniture",
+        "False Ceiling Support Structures",
+        "Custom Metal Artwork",
+        "Architectural Metalwork"
       ]
     },
     {
       icon: <FaIndustry size={30} />,
-      title: "INFRASTRUCTURE DEVELOPMENT",
+      title: "INDUSTRIAL FABRICATION",
       items: [
-        "Site development works",
-        "Utility infrastructure",
-        "Landscape development",
-        "Parking facilities",
-        "External works",
-        "Site utilities"
+        "Machine Frames & Housings",
+        "Storage Racks & Platforms",
+        "Piping & Flange Fabrication",
+        "Tanks, Silos, & Vessels",
+        "Conveyor Frames & Systems",
+        "Industrial Equipment Fabrication"
+      ]
+    },
+    {
+      icon: <FaTools size={30} />,
+      title: "SPECIALIZED FABRICATION",
+      items: [
+        "Custom Metal Fabrication",
+        "Precision Metal Works",
+        "Metal Joinery & Connections",
+        "Fabrication for MEP Systems",
+        "Special Project Fabrication",
+        "Prototype Development"
       ]
     }
   ];
 
   const features = [
     {
-      title: "Quality Assurance",
-      description: "Strict quality control and adherence to international standards"
+      title: "Precision Engineering",
+      description: "Advanced fabrication techniques with strict quality control"
+    },
+    {
+      title: "Quality Materials",
+      description: "Certified MS, SS, and specialized alloys for durability"
+    },
+    {
+      title: "Custom Solutions",
+      description: "Tailored fabrication for specific project requirements"
     },
     {
       title: "Modern Equipment",
-      description: "State-of-the-art machinery and construction equipment"
-    },
-    {
-      title: "Expert Team",
-      description: "Experienced engineers and skilled workforce"
-    },
-    {
-      title: "Timely Completion",
-      description: "Efficient project management for on-time delivery"
+      description: "State-of-the-art fabrication machinery and tools"
     }
   ];
 
-  const projectTypes = [
+  const fabricationTypes = [
     {
-      title: "Residential Projects",
-      description: "Villas, apartments, and residential complexes"
+      title: "Structural Steel",
+      description: "Beams, columns, trusses and structural elements"
     },
     {
-      title: "Commercial Buildings",
-      description: "Office towers, malls, and commercial centers"
+      title: "Architectural Metal",
+      description: "Decorative and functional architectural elements"
     },
     {
-      title: "Industrial Facilities",
-      description: "Factories, warehouses, and industrial plants"
+      title: "Industrial Equipment",
+      description: "Machinery frames and industrial components"
     },
     {
-      title: "Institutional Projects",
-      description: "Schools, hospitals, and government buildings"
+      title: "Custom Fabrication",
+      description: "Bespoke metalwork for unique requirements"
     }
   ];
 
@@ -138,7 +139,7 @@ const CivilWorks: React.FC = () => {
               letterSpacing: "1px",
             }}
           >
-            CIVIL WORKS
+            FABRICATION WORKS
           </Typography>
           <Box
             sx={{
@@ -159,7 +160,7 @@ const CivilWorks: React.FC = () => {
               fontSize: { xs: "1.5rem", md: "2rem" },
             }}
           >
-            COMPREHENSIVE CIVIL ENGINEERING SOLUTIONS
+            COMPREHENSIVE METAL FABRICATION SOLUTIONS
           </Typography>
           <Typography
             variant="h6"
@@ -171,8 +172,8 @@ const CivilWorks: React.FC = () => {
               fontSize: { xs: "1rem", md: "1.2rem" },
             }}
           >
-            Professional civil engineering services including structural works, building construction, 
-            and infrastructure development for residential, commercial, and industrial projects across UAE.
+            Professional metal fabrication services including structural steel, architectural metalwork, 
+            industrial equipment, and custom fabrication solutions across UAE with precision and quality.
           </Typography>
         </Box>
 
@@ -257,7 +258,7 @@ const CivilWorks: React.FC = () => {
               fontSize: { xs: "2rem", md: "2.5rem" },
             }}
           >
-            Why Choose Our Civil Works Services?
+            Our Fabrication Expertise
           </Typography>
           <Grid container spacing={3}>
             {features.map((feature, index) => (
@@ -297,7 +298,7 @@ const CivilWorks: React.FC = () => {
           </Grid>
         </Box>
 
-        {/* Project Types Section */}
+        {/* Fabrication Types Section */}
         <Box sx={{ mb: 8 }}>
           <Typography
             variant="h3"
@@ -309,10 +310,10 @@ const CivilWorks: React.FC = () => {
               fontSize: { xs: "2rem", md: "2.5rem" },
             }}
           >
-            Project Types We Handle
+            Types of Fabrication We Specialize In
           </Typography>
           <Grid container spacing={3}>
-            {projectTypes.map((project, index) => (
+            {fabricationTypes.map((type, index) => (
               <Grid item xs={12} sm={6} md={3} key={index}>
                 <Card
                   sx={{
@@ -338,10 +339,10 @@ const CivilWorks: React.FC = () => {
                         mb: 2,
                       }}
                     >
-                      {project.title}
+                      {type.title}
                     </Typography>
                     <Typography variant="body2" sx={{ color: "rgba(255, 255, 255, 0.9)" }}>
-                      {project.description}
+                      {type.description}
                     </Typography>
                   </CardContent>
                 </Card>
@@ -362,17 +363,17 @@ const CivilWorks: React.FC = () => {
               fontSize: { xs: "1.5rem", md: "2rem" },
             }}
           >
-            Our Key Strengths
+            Why Choose Our Fabrication Services?
           </Typography>
           <Grid container spacing={3}>
             <Grid item xs={12} md={4}>
               <Box sx={{ textAlign: "center", p: 3 }}>
                 <FaShieldAlt size={40} color="#3498db" style={{ marginBottom: "16px" }} />
                 <Typography variant="h6" sx={{ color: "#3498db", mb: 2 }}>
-                  Safety First
+                  Quality Assurance
                 </Typography>
                 <Typography variant="body1" color="#ecf0f1">
-                  Strict adherence to safety protocols and international standards on all sites.
+                  Strict quality control and adherence to international standards for all fabrication works.
                 </Typography>
               </Box>
             </Grid>
@@ -383,18 +384,18 @@ const CivilWorks: React.FC = () => {
                   Advanced Technology
                 </Typography>
                 <Typography variant="body1" color="#ecf0f1">
-                  Modern construction techniques and equipment for superior results.
+                  Modern fabrication equipment and techniques for precision and efficiency.
                 </Typography>
               </Box>
             </Grid>
             <Grid item xs={12} md={4}>
               <Box sx={{ textAlign: "center", p: 3 }}>
-                <FaTools size={40} color="#3498db" style={{ marginBottom: "16px" }} />
+                <FaHammer size={40} color="#3498db" style={{ marginBottom: "16px" }} />
                 <Typography variant="h6" sx={{ color: "#3498db", mb: 2 }}>
-                  Quality Workmanship
+                  Expert Craftsmanship
                 </Typography>
                 <Typography variant="body1" color="#ecf0f1">
-                  Skilled workforce ensuring high-quality construction and finishing.
+                  Skilled fabricators with years of experience in metalworking and fabrication.
                 </Typography>
               </Box>
             </Grid>
@@ -420,7 +421,7 @@ const CivilWorks: React.FC = () => {
               fontSize: { xs: "2rem", md: "2.5rem" },
             }}
           >
-            Professional Civil Works Services
+            Professional Fabrication Services
           </Typography>
           <Typography
             variant="h6"
@@ -432,7 +433,8 @@ const CivilWorks: React.FC = () => {
               lineHeight: 1.6,
             }}
           >
-            Get comprehensive civil engineering solutions for your construction projects in Dubai and across UAE.
+            Contact us for all your metal fabrication needs in Dubai and across UAE. 
+            From construction to industrial applications, we deliver quality and precision.
           </Typography>
           
           <Box sx={{ display: "flex", justifyContent: "center", gap: 3, flexWrap: "wrap" }}>
@@ -488,4 +490,4 @@ const CivilWorks: React.FC = () => {
   );
 };
 
-export default CivilWorks;
+export default FabricationWorks;

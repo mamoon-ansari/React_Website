@@ -12,105 +12,61 @@ import {
   ListItemIcon
 } from "@mui/material";
 import { 
-  FaBuilding, 
-  FaHardHat, 
-  FaTools,
+  FaTools, 
+  FaWrench, 
+  FaCog,
   FaCheckCircle,
   FaPhone,
   FaEnvelope,
-  FaShieldAlt,
-  FaCogs,
-  FaHome,
-  FaIndustry
+  FaSnowflake,
+  FaFan
 } from "react-icons/fa";
 
-const CivilWorks: React.FC = () => {
-  const services = [
+const HVACServices: React.FC = () => {
+  const serviceCategories = [
     {
-      icon: <FaBuilding size={30} />,
-      title: "STRUCTURAL WORKS",
+      icon: <FaCog size={30} />,
+      title: "INSTALLATION SERVICES",
       items: [
-        "Concrete structure construction",
-        "Steel structure erection",
-        "Foundation works",
-        "Retaining walls construction",
-        "Pre-cast concrete elements",
-        "Structural steel fabrication"
+        "Centralized HVAC System Setup",
+        "Split & Ductable AC Installation",
+        "VRV/VRF System Installation",
+        "Chiller Plant Installation",
+        "Ducting & Piping Works",
+        "Exhaust & Ventilation System Setup",
+        "Air Handling Units (AHU) & Fan Coil Units (FCU) Installation"
       ]
     },
     {
-      icon: <FaHardHat size={30} />,
-      title: "EARTH WORKS",
+      icon: <FaWrench size={30} />,
+      title: "REPAIR & BREAKDOWN SERVICES",
       items: [
-        "Excavation and backfilling",
-        "Site grading and leveling",
-        "Soil stabilization",
-        "Land development",
-        "Cut and fill operations",
-        "Earth moving and compaction"
-      ]
-    },
-    {
-      icon: <FaHome size={30} />,
-      title: "BUILDING CONSTRUCTION",
-      items: [
-        "Residential building construction",
-        "Commercial building construction",
-        "Industrial facilities",
-        "Institutional buildings",
-        "Mixed-use developments",
-        "High-rise constructions"
-      ]
-    },
-    {
-      icon: <FaIndustry size={30} />,
-      title: "INFRASTRUCTURE DEVELOPMENT",
-      items: [
-        "Site development works",
-        "Utility infrastructure",
-        "Landscape development",
-        "Parking facilities",
-        "External works",
-        "Site utilities"
+        "AC Compressor Repair",
+        "Gas Leak Detection & Recharging",
+        "Motor & Fan Repair",
+        "Thermostat Troubleshooting",
+        "Duct Repair & Re-insulation",
+        "Noise & Vibration Issue Resolution"
       ]
     }
   ];
 
-  const features = [
+  const additionalServices = [
     {
-      title: "Quality Assurance",
-      description: "Strict quality control and adherence to international standards"
+      title: "Maintenance Contracts",
+      description: "Regular preventive maintenance to ensure optimal performance"
     },
     {
-      title: "Modern Equipment",
-      description: "State-of-the-art machinery and construction equipment"
+      title: "Energy Efficiency Audit",
+      description: "Optimize your HVAC system for better energy consumption"
     },
     {
-      title: "Expert Team",
-      description: "Experienced engineers and skilled workforce"
+      title: "System Upgrades",
+      description: "Upgrade existing systems with latest technology"
     },
     {
-      title: "Timely Completion",
-      description: "Efficient project management for on-time delivery"
-    }
-  ];
-
-  const projectTypes = [
-    {
-      title: "Residential Projects",
-      description: "Villas, apartments, and residential complexes"
-    },
-    {
-      title: "Commercial Buildings",
-      description: "Office towers, malls, and commercial centers"
-    },
-    {
-      title: "Industrial Facilities",
-      description: "Factories, warehouses, and industrial plants"
-    },
-    {
-      title: "Institutional Projects",
-      description: "Schools, hospitals, and government buildings"
+      title: "Emergency Services",
+      description: "24/7 emergency repair services for critical situations"
     }
   ];
 
@@ -138,7 +94,7 @@ const CivilWorks: React.FC = () => {
               letterSpacing: "1px",
             }}
           >
-            CIVIL WORKS
+            HVAC SERVICES
           </Typography>
           <Box
             sx={{
@@ -159,26 +115,13 @@ const CivilWorks: React.FC = () => {
               fontSize: { xs: "1.5rem", md: "2rem" },
             }}
           >
-            COMPREHENSIVE CIVIL ENGINEERING SOLUTIONS
-          </Typography>
-          <Typography
-            variant="h6"
-            sx={{
-              color: "#ecf0f1",
-              maxWidth: "800px",
-              mx: "auto",
-              lineHeight: 1.6,
-              fontSize: { xs: "1rem", md: "1.2rem" },
-            }}
-          >
-            Professional civil engineering services including structural works, building construction, 
-            and infrastructure development for residential, commercial, and industrial projects across UAE.
+            OUR COMPLETE RANGE OF HVAC WORKS INCLUDE
           </Typography>
         </Box>
 
-        {/* Services Section */}
+        {/* Main Services Section */}
         <Grid container spacing={4} sx={{ mb: 8 }}>
-          {services.map((service, index) => (
+          {serviceCategories.map((category, index) => (
             <Grid item xs={12} md={6} key={index}>
               <Card
                 sx={{
@@ -209,7 +152,7 @@ const CivilWorks: React.FC = () => {
                         mr: 2,
                       }}
                     >
-                      {service.icon}
+                      {category.icon}
                     </Box>
                     <Typography
                       variant="h5"
@@ -219,12 +162,12 @@ const CivilWorks: React.FC = () => {
                         fontSize: "1.3rem",
                       }}
                     >
-                      {service.title}
+                      {category.title}
                     </Typography>
                   </Box>
                   
                   <List dense>
-                    {service.items.map((item, itemIndex) => (
+                    {category.items.map((item, itemIndex) => (
                       <ListItem key={itemIndex} sx={{ px: 0, py: 1 }}>
                         <ListItemIcon sx={{ minWidth: "35px" }}>
                           <FaCheckCircle size={16} color="#3498db" />
@@ -245,7 +188,7 @@ const CivilWorks: React.FC = () => {
           ))}
         </Grid>
 
-        {/* Features Section */}
+        {/* Additional Services Section */}
         <Box sx={{ mb: 8 }}>
           <Typography
             variant="h3"
@@ -257,10 +200,10 @@ const CivilWorks: React.FC = () => {
               fontSize: { xs: "2rem", md: "2.5rem" },
             }}
           >
-            Why Choose Our Civil Works Services?
+            Additional Services
           </Typography>
           <Grid container spacing={3}>
-            {features.map((feature, index) => (
+            {additionalServices.map((service, index) => (
               <Grid item xs={12} sm={6} md={3} key={index}>
                 <Card
                   sx={{
@@ -285,63 +228,10 @@ const CivilWorks: React.FC = () => {
                         color: "#3498db",
                       }}
                     >
-                      {feature.title}
+                      {service.title}
                     </Typography>
                     <Typography variant="body2" color="#ecf0f1">
-                      {feature.description}
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
-
-        {/* Project Types Section */}
-        <Box sx={{ mb: 8 }}>
-          <Typography
-            variant="h3"
-            sx={{
-              fontWeight: "bold",
-              mb: 4,
-              color: "#3498db",
-              textAlign: "center",
-              fontSize: { xs: "2rem", md: "2.5rem" },
-            }}
-          >
-            Project Types We Handle
-          </Typography>
-          <Grid container spacing={3}>
-            {projectTypes.map((project, index) => (
-              <Grid item xs={12} sm={6} md={3} key={index}>
-                <Card
-                  sx={{
-                    background: "linear-gradient(135deg, #3498db 0%, #2980b9 100%)",
-                    color: "white",
-                    borderRadius: "12px",
-                    boxShadow: "0 8px 32px rgba(52, 152, 219, 0.3)",
-                    border: "1px solid rgba(255, 255, 255, 0.2)",
-                    height: "100%",
-                    textAlign: "center",
-                    transition: "all 0.3s ease-in-out",
-                    "&:hover": {
-                      transform: "translateY(-5px)",
-                      boxShadow: "0 12px 40px rgba(52, 152, 219, 0.5)",
-                    },
-                  }}
-                >
-                  <CardContent sx={{ p: 3 }}>
-                    <Typography
-                      variant="h6"
-                      sx={{
-                        fontWeight: "bold",
-                        mb: 2,
-                      }}
-                    >
-                      {project.title}
-                    </Typography>
-                    <Typography variant="body2" sx={{ color: "rgba(255, 255, 255, 0.9)" }}>
-                      {project.description}
+                      {service.description}
                     </Typography>
                   </CardContent>
                 </Card>
@@ -362,28 +252,28 @@ const CivilWorks: React.FC = () => {
               fontSize: { xs: "1.5rem", md: "2rem" },
             }}
           >
-            Our Key Strengths
+            Why Choose Our HVAC Services?
           </Typography>
           <Grid container spacing={3}>
             <Grid item xs={12} md={4}>
               <Box sx={{ textAlign: "center", p: 3 }}>
-                <FaShieldAlt size={40} color="#3498db" style={{ marginBottom: "16px" }} />
+                <FaSnowflake size={40} color="#3498db" style={{ marginBottom: "16px" }} />
                 <Typography variant="h6" sx={{ color: "#3498db", mb: 2 }}>
-                  Safety First
+                  Expert Technicians
                 </Typography>
                 <Typography variant="body1" color="#ecf0f1">
-                  Strict adherence to safety protocols and international standards on all sites.
+                  Certified professionals with extensive experience in all HVAC systems.
                 </Typography>
               </Box>
             </Grid>
             <Grid item xs={12} md={4}>
               <Box sx={{ textAlign: "center", p: 3 }}>
-                <FaCogs size={40} color="#3498db" style={{ marginBottom: "16px" }} />
+                <FaFan size={40} color="#3498db" style={{ marginBottom: "16px" }} />
                 <Typography variant="h6" sx={{ color: "#3498db", mb: 2 }}>
-                  Advanced Technology
+                  Quality Parts
                 </Typography>
                 <Typography variant="body1" color="#ecf0f1">
-                  Modern construction techniques and equipment for superior results.
+                  Genuine parts and components from leading manufacturers.
                 </Typography>
               </Box>
             </Grid>
@@ -391,10 +281,10 @@ const CivilWorks: React.FC = () => {
               <Box sx={{ textAlign: "center", p: 3 }}>
                 <FaTools size={40} color="#3498db" style={{ marginBottom: "16px" }} />
                 <Typography variant="h6" sx={{ color: "#3498db", mb: 2 }}>
-                  Quality Workmanship
+                  Quick Response
                 </Typography>
                 <Typography variant="body1" color="#ecf0f1">
-                  Skilled workforce ensuring high-quality construction and finishing.
+                  Fast response times for installations, repairs, and emergencies.
                 </Typography>
               </Box>
             </Grid>
@@ -420,7 +310,7 @@ const CivilWorks: React.FC = () => {
               fontSize: { xs: "2rem", md: "2.5rem" },
             }}
           >
-            Professional Civil Works Services
+            Professional HVAC Services
           </Typography>
           <Typography
             variant="h6"
@@ -432,7 +322,7 @@ const CivilWorks: React.FC = () => {
               lineHeight: 1.6,
             }}
           >
-            Get comprehensive civil engineering solutions for your construction projects in Dubai and across UAE.
+            Contact us for all your heating, ventilation, and air conditioning needs in Dubai and across UAE.
           </Typography>
           
           <Box sx={{ display: "flex", justifyContent: "center", gap: 3, flexWrap: "wrap" }}>
@@ -488,4 +378,4 @@ const CivilWorks: React.FC = () => {
   );
 };
 
-export default CivilWorks;
+export default HVACServices;

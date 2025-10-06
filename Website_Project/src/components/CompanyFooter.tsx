@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaTools, FaRoad, FaBuilding, FaBolt } from "react-icons/fa";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
@@ -112,7 +113,7 @@ const CompanyFooter: React.FC = () => {
               fontSize: "1.1rem",
             }}
           >
-            Specialized in Infrastructure Works, Road Maintenance Works, Underground Utility Works, 
+            Specialized in Infrastructure Works, Road Maintenance Works, Underground Utility Works,
             Pavement Works, Civil Works and Electromechanical Works in Dubai, UAE
           </Typography>
         </Box>
@@ -140,39 +141,58 @@ const CompanyFooter: React.FC = () => {
 
                 <Box>
                   <ServiceItem>
-                    <IconWrapper sx={{ bgcolor: "rgba(52, 152, 219, 0.1)" }}>
-                      <FaBuilding size={16} color="#3498db" />
-                    </IconWrapper>
-                    <Typography variant="body1" sx={{ color: "#ecf0f1", fontSize: "1rem", fontWeight: "500" }}>
-                      Infrastructure Works
-                    </Typography>
+                    <Link to="/services/infrastructure" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', width: '100%' }}>
+                      <IconWrapper sx={{ bgcolor: "rgba(52, 152, 219, 0.1)" }}>
+                        <FaBuilding size={16} color="#3498db" />
+                      </IconWrapper>
+                      <Typography variant="body1" sx={{ color: "#ecf0f1", fontSize: "1rem", fontWeight: "500", ml: 2 }}>
+                        Infrastructure Works
+                      </Typography>
+                    </Link>
                   </ServiceItem>
 
                   <ServiceItem>
-                    <IconWrapper sx={{ bgcolor: "rgba(52, 152, 219, 0.1)" }}>
-                      <FaRoad size={16} color="#3498db" />
-                    </IconWrapper>
-                    <Typography variant="body1" sx={{ color: "#ecf0f1", fontSize: "1rem", fontWeight: "500" }}>
-                      Road Works
-                    </Typography>
+                    <Link to="/services/road-works" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', width: '100%' }}>
+                      <IconWrapper sx={{ bgcolor: "rgba(52, 152, 219, 0.1)" }}>
+                        <FaRoad size={16} color="#3498db" />
+                      </IconWrapper>
+                      <Typography variant="body1" sx={{ color: "#ecf0f1", fontSize: "1rem", fontWeight: "500", ml: 2 }}>
+                        Road Works
+                      </Typography>
+                    </Link>
                   </ServiceItem>
 
                   <ServiceItem>
-                    <IconWrapper sx={{ bgcolor: "rgba(52, 152, 219, 0.1)" }}>
-                      <FaBuilding size={16} color="#3498db" />
-                    </IconWrapper>
-                    <Typography variant="body1" sx={{ color: "#ecf0f1", fontSize: "1rem", fontWeight: "500" }}>
-                      Civil Works
-                    </Typography>
+                    <Link to="/services/civil-works" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', width: '100%' }}>
+                      <IconWrapper sx={{ bgcolor: "rgba(52, 152, 219, 0.1)" }}>
+                        <FaBuilding size={16} color="#3498db" />
+                      </IconWrapper>
+                      <Typography variant="body1" sx={{ color: "#ecf0f1", fontSize: "1rem", fontWeight: "500", ml: 2 }}>
+                        Civil Works
+                      </Typography>
+                    </Link>
                   </ServiceItem>
 
                   <ServiceItem>
-                    <IconWrapper sx={{ bgcolor: "rgba(52, 152, 219, 0.1)" }}>
-                      <FaBolt size={16} color="#3498db" />
-                    </IconWrapper>
-                    <Typography variant="body1" sx={{ color: "#ecf0f1", fontSize: "1rem", fontWeight: "500" }}>
-                      Electromechanical Works
-                    </Typography>
+                    <Link to="/services/electromechanical" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', width: '100%' }}>
+                      <IconWrapper sx={{ bgcolor: "rgba(52, 152, 219, 0.1)" }}>
+                        <FaBolt size={16} color="#3498db" />
+                      </IconWrapper>
+                      <Typography variant="body1" sx={{ color: "#ecf0f1", fontSize: "1rem", fontWeight: "500", ml: 2 }}>
+                        Electromechanical Works
+                      </Typography>
+                    </Link>
+                  </ServiceItem>
+
+                  <ServiceItem>
+                    <Link to="/services/fabrication-works" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', width: '100%' }}>
+                      <IconWrapper sx={{ bgcolor: "rgba(52, 152, 219, 0.1)" }}>
+                        <FaBolt size={16} color="#3498db" />
+                      </IconWrapper>
+                      <Typography variant="body1" sx={{ color: "#ecf0f1", fontSize: "1rem", fontWeight: "500", ml: 2 }}>
+                        Fabrication Works
+                      </Typography>
+                    </Link>
                   </ServiceItem>
                 </Box>
               </CardContent>
@@ -303,7 +323,7 @@ const CompanyFooter: React.FC = () => {
               mb: 3,
             }}
           >
-            Request a quote for your Infrastructure, Road Maintenance, Civil and Electromechanical projects in UAE. 
+            Request a quote for your Infrastructure, Road Maintenance, Civil and Electromechanical projects in UAE.
             We are always happy to serve you!
           </Typography>
           <Box
